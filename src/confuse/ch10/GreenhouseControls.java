@@ -85,6 +85,33 @@ public class GreenhouseControls extends Controller {
         }
     }
 
+    // 风扇
+    private boolean fan = false;
+    // 打开风扇
+    public class FanOn extends Event {
+        public FanOn(long delayTime) {
+            super(delayTime);
+        }
+        public void action() {
+            fan = true;
+        }
+        public String toString() {
+            return "Fan is on";
+        }
+    }
+    // 关闭风扇
+    public class FanOff extends Event {
+        public FanOff(long delayTime) {
+            super(delayTime);
+        }
+        public void action() {
+            fan = false;
+        }
+        public String toString() {
+            return "Fan is off";
+        }
+    }
+
     // 响铃
     public class Bell extends Event {
         public Bell(long delayTime) {
