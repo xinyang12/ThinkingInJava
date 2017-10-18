@@ -7,6 +7,11 @@ public class Prac22Word {
     public Prac22Word() {
     }
 
+    public Prac22Word(String word, Integer counter) {
+        this.word = word;
+        this.counter = counter;
+    }
+
     public String getWord() {
         return word;
     }
