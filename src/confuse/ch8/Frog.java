@@ -1,5 +1,8 @@
 package confuse.ch8;
 
+/**
+ * 加入ch12 练习17
+ */
 class Characteristic {
     private String s;
     Characteristic(String s) {
@@ -76,8 +79,16 @@ public class Frog extends Amphibian {
         super.dispose();
     }
     public static void main(String[] args) {
-        Frog frog = new Frog();
-        System.out.println("Bye!");
-        frog.dispose();
+        Frog frog = null;
+        try {
+            frog = new Frog();
+            System.out.println("Bye!");
+            return;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            frog.dispose();
+            System.out.println("finally");
+        }
     }
 }

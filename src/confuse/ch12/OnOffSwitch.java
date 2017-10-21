@@ -9,6 +9,7 @@ public class OnOffSwitch {
             sw.on();
             f();
             sw.off();
+            throw new RuntimeException();
         } catch (OnOffException1 e) {
             System.out.println("OnOffException1");
             sw.off();

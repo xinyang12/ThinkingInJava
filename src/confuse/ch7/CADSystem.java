@@ -1,5 +1,8 @@
 package confuse.ch7;
 
+/**
+ * 加入ch12 练习16
+ */
 class Shape {
     Shape(int i) {
         System.out.println("Shape constructor");
@@ -22,8 +25,15 @@ class Circle extends Shape {
 
 public class CADSystem {
     public static void main(String[] args) {
-        Circle circle = new Circle(1);
-        circle.dispose();
+        Circle circle = null;
+        try {
+            circle = new Circle(1);
+            return;
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            circle.dispose();
+        }
     }
 
 }

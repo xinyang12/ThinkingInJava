@@ -18,9 +18,11 @@ public class Practice9 {
             testException();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            System.out.println("finally statement");
         }
     }
-    public static void testException() throws Prac9Exception1, Prac9Exception2, Prac9Exception3 {
+    public static void testException() throws Prac9Exception1, Prac9Exception2, Prac9Exception3, NullPointerException {
 
     }
 }
