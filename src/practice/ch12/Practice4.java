@@ -1,8 +1,12 @@
 package practice.ch12;
 
-class Prac3Exception extends Exception {
+/**
+ * 加入练习28
+ * RuntimeException可以不被catch
+ */
+class Prac4Exception extends RuntimeException {
     private String args;
-    Prac3Exception(String args) {
+    Prac4Exception(String args) {
         super(args);
         this.args = args;
     }
@@ -13,10 +17,10 @@ class Prac3Exception extends Exception {
 
 public class Practice4 {
     public static void main(String[] args) {
-        try {
-            throw new Prac3Exception("sdf");
-        } catch (Prac3Exception e) {
-            e.print();
-        }
+//        try {
+            throw new Prac4Exception("sdf");
+//        } catch (Prac4Exception e) {
+//            e.print();
+//        }
     }
 }
