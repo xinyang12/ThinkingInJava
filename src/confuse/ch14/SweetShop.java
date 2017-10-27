@@ -25,8 +25,9 @@ public class SweetShop {
         print("inside main");
         new Candy();
         print("After creating Candy");
+        // 要写全限定名，不能写路径名！！！
         try {
-            Class.forName("Gum");
+            Class.forName("confuse.ch14.Gum");
         } catch (ClassNotFoundException e) {
             print("Couldn't find Gum");
         }
