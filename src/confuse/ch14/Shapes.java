@@ -11,26 +11,30 @@ abstract class Shape {
 }
 
 class Circle extends Shape {
+    boolean flag = false;
     public String toString() {
-        return "Circle";
+        return "Circle " + flag;
     }
 }
 
 class Square extends Shape {
+    boolean flag = false;
     public String toString() {
-        return "Square";
+        return "Square " + flag;
     }
 }
 
 class Triangle extends Shape {
+    boolean flag = false;
     public String toString() {
-        return "Triangle";
+        return "Triangle " + flag;
     }
 }
 
 class Rhomboid extends Shape {
+    boolean flag = false;
     public String toString() {
-        return "Rhomboid";
+        return "Rhomboid " + flag;
     }
 }
 
@@ -52,10 +56,18 @@ public class Shapes {
             System.out.println("yes");
         }
     }
+    public static void setFlag(Shape shape) {
+        if (shape instanceof Triangle) {
+            ((Triangle) shape).flag = true;
+        }
+    }
     public static void main(String[] args) {
         List<Shape> shapeList = Arrays.asList(new Circle(), new Square(), new Triangle(), new Rhomboid());
         for (Shape shape : shapeList) {
-            rotate(shape);
+//            rotate(shape);
+//            shape.draw();
+            setFlag(shape);
+            System.out.println(shape);
         }
     }
 }
